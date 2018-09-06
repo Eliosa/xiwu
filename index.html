@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+    </head>
+    <link rel="stylesheet" href="../index.css?t=20180831">
+    <script>
+        function fontAuto() {
+            var winW = document.documentElement.clientWidth;
+            if (winW >= 640) {
+                document.documentElement.style.fontSize = (640 / 750 * 625) + "%";
+            } 
+            else {
+                document.documentElement.style.fontSize = (winW / 750 * 625) + "%";
+            }
+        }
+        fontAuto();
+        window.onresize = fontAuto;
+    </script>
+    <body>
+        <div class="views">
+            <div class="view-main">
+                <div class="pages xiwu">
+                    <div class="navbar">
+                        习武时间计算
+                    </div>
+                    <div class="page-content">
+                        <div>
+                            <div class="xiwu-title">武场创建时间(按照24h计算)：</div>
+                            <div class="xiwu-title-inputs-con row no-gutter">
+                                <div class="col-33">时(h)</div>
+                                <div class="col-33">分(min)</div>
+                                <div class="col-33">秒(s)</div>
+                                <div class="col-33">
+                                    <input class="xiwu-title-inputs" type="tel" name="" id="">
+                                </div>
+                                <div class="col-33">
+                                    <input class="xiwu-title-inputs" type="tel" name="" id="">
+                                </div>
+                                <div class="col-33">
+                                    <input class="xiwu-title-inputs" type="tel" name="" id="">
+                                </div>
+                            </div>
+                            <div class="xiwu-title">要抢位，最近一人入场时间(按照24h计算)：</div>
+                            <div class="xiwu-title-inputs-con row no-gutter">
+                                <div class="col-33">时(h)</div>
+                                <div class="col-33">分(min)</div>
+                                <div class="col-33">秒(s)</div>
+                                <div class="col-33">
+                                    <input class="xiwu-title-inputs" type="tel" name="" id="">
+                                </div>
+                                <div class="col-33">
+                                    <input class="xiwu-title-inputs" type="tel" name="" id="">
+                                </div>
+                                <div class="col-33">
+                                    <input class="xiwu-title-inputs" type="tel" name="" id="">
+                                </div>
+                            </div>
+                            <div class="xiwu-title">是否与创建武场人同帮派</div>
+                            <div class="xiwu-content" style="text-align:center;">
+                                <label class="label-switch">
+                                    <input type="checkbox" name="" id="xiwu_attr1">
+                                    <div class="checkbox"></div>
+                                </label>
+                            </div>
+                        </div>
+
+                        <a href="javascript:xiwu.cacl()" class="xiwu-btn">计 &nbsp; 算</a>
+                        <div class="xu-result">
+                            <span class="xiwu-title">进场时间：</span>
+                            <span class="xiwu-content JS-xiwu-result font-red"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="../jquery-3.1.1.js"></script>
+        <script src="../index.js"></script>
+    </body>
+</html>
